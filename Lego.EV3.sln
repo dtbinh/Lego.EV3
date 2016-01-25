@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.EV3.Core", "Lego.EV3.Core\Lego.EV3.Core.csproj", "{82E3A21C-BB44-401A-B054-6075E8C03753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.EV3.Shared", "Lego.EV3.Shared\Lego.EV3.Shared.csproj", "{FE610E30-783B-45F0-8C32-FE1F0AD265B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{B941E07C-69FF-40EF-BE57-7376A5A5A49C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{6F029BB5-B68E-43A3-897A-8B9BC6881969}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Phone", "Phone", "{79CB10A2-6F79-48D0-BA70-5517FDD0C3F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Communications", "Communications", "{A50C9FE9-5F7F-4D2D-BCC2-3DF1D3847413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 - Lego.EV3.ConsoleTest", "Lego.EV3.ConsoleTest\01 - Lego.EV3.ConsoleTest.csproj", "{4EFA3084-92BC-4D9F-B322-96F45ECBA1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 - Lego.EV3.WPF", "Lego.EV3.WPF\02 - Lego.EV3.WPF.csproj", "{A218E234-559E-4BF1-AAC5-58B96C8BBD78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82E3A21C-BB44-401A-B054-6075E8C03753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E3A21C-BB44-401A-B054-6075E8C03753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E3A21C-BB44-401A-B054-6075E8C03753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E3A21C-BB44-401A-B054-6075E8C03753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE610E30-783B-45F0-8C32-FE1F0AD265B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE610E30-783B-45F0-8C32-FE1F0AD265B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE610E30-783B-45F0-8C32-FE1F0AD265B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE610E30-783B-45F0-8C32-FE1F0AD265B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFA3084-92BC-4D9F-B322-96F45ECBA1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFA3084-92BC-4D9F-B322-96F45ECBA1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFA3084-92BC-4D9F-B322-96F45ECBA1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFA3084-92BC-4D9F-B322-96F45ECBA1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A218E234-559E-4BF1-AAC5-58B96C8BBD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A218E234-559E-4BF1-AAC5-58B96C8BBD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A218E234-559E-4BF1-AAC5-58B96C8BBD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A218E234-559E-4BF1-AAC5-58B96C8BBD78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82E3A21C-BB44-401A-B054-6075E8C03753} = {A50C9FE9-5F7F-4D2D-BCC2-3DF1D3847413}
+		{4EFA3084-92BC-4D9F-B322-96F45ECBA1C3} = {B941E07C-69FF-40EF-BE57-7376A5A5A49C}
+		{A218E234-559E-4BF1-AAC5-58B96C8BBD78} = {B941E07C-69FF-40EF-BE57-7376A5A5A49C}
+	EndGlobalSection
+EndGlobal
