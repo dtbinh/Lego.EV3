@@ -63,6 +63,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\DoubleRoundedConverter.cs" />
+    <Compile Include="Converters\IndexToVisibilityConverter.cs" />
+    <Compile Include="Converters\MotorValueTimerConverter.cs" />
+    <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="Enums\ConnectionTypes.cs" />
     <Compile Include="Enums\MotorMovementTypes.cs" />
     <Compile Include="Enums\MotorStyles.cs" />
@@ -100,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Converters\" />
     <Folder Include="EventArgs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
