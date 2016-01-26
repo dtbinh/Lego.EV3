@@ -73,13 +73,10 @@
 
 
         <!--Row 2-->
-
         <Button x:Name="PlayTone" Grid.Row="2" Grid.Column="0" ToolTip="Play Tone"  
                 Click="PlayTone_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/play_tone.png" />
         </Button>
-
-
         <Button x:Name="TurnMotorPower" Grid.Row="2" Grid.Column="1" ToolTip="Turn Motor Power"
                 Click="TurnMotorPower_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/engine.png" />
@@ -102,8 +99,6 @@
                 Click="TimeMotorPower_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
         </Button>
-
-
         <Button x:Name="TimeMotorSpeed" Grid.Row="3" Grid.Column="1"  
                 Click="TimeMotorSpeed_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
@@ -126,8 +121,6 @@
                 Click="Draw_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
         </Button>
-
-
         <Button x:Name="BatchNoReply" Grid.Row="4" Grid.Column="1" 
                 Click="BatchNoReply_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
