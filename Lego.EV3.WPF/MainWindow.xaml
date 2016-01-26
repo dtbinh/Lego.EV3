@@ -6,8 +6,172 @@
         xmlns:local="clr-namespace:Lego.EV3.WPF"
         mc:Ignorable="d"
         Title="Lego EV3" Height="350" Width="525"
-        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" SizeToContent="Height">
-    <StackPanel>
+        Loaded="Window_Loaded" 
+        WindowStartupLocation="CenterScreen" SizeToContent="Height">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="60" />
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Cursor" Value="Hand"></Setter>
+            <Setter Property="Margin" Value="0,0,0,5"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        </Style>
+
+        <Style TargetType="Image">
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Width" Value="50"></Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <Grid Margin="10,10,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" 
+                BorderBrush="#FF252A30" 
+                BorderThickness="1" Margin="0,0,19,5">
+        </Border>
+
+        <!--Row 0-->
+        <ComboBox Grid.Row="0" Grid.Column="0" x:Name="Ports" 
+                  Height="25" Margin="0,0,5,5"/>
+
+        <!--Row 1-->
+        <Button Grid.Row="1" Grid.Column="0" x:Name="Connect" ToolTip="Connect" 
+                Click="Connect_Click" Margin="10,20,20,20" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="Disconnect"  ToolTip="Disconnect" 
+                Click="Disconnect_Click" Margin="10,20,20,20" >
+            <Image Source="/Lego.EV3.WPF;component/Images/disconnect_icon.png" />
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="ClearAll" ToolTip="Clear all"  
+                Click="ClearAll_Click" Margin="10,20,20,20">
+            <Image Source="/Lego.EV3.WPF;component/Images/clear.png" />
+        </Button>
+        <Button x:Name="GetFirmwareVersion" Grid.Row="1" Grid.Column="3" ToolTip="Get Firmware"  
+                Margin="10,20,20,20"
+                Click="GetFirmwareVersion_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/firmware.png" />
+        </Button>
+
+
+        <!--Row 2-->
+
+        <Button x:Name="PlayTone" Grid.Row="2" Grid.Column="0" ToolTip="Play Tone"  
+                Click="PlayTone_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/play_tone.png" />
+        </Button>
+
+
+        <Button x:Name="TurnMotorPower" Grid.Row="2" Grid.Column="1" 
+                Click="TurnMotorPower_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="TurnMotorSpeed" Grid.Row="2" Grid.Column="2" 
+                Click="TurnMotorSpeed_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="StepMotorPower" Grid.Row="2" Grid.Column="3"  
+                Click="StepMotorPower_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="StepMotorSpeed" Grid.Row="2" Grid.Column="4"  
+                Click="StepMotorSpeed_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+
+        <!--Row 3-->
+        <Button x:Name="TimeMotorPower" Grid.Row="3" Grid.Column="0"  
+                Click="TimeMotorPower_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+
+
+        <Button x:Name="TimeMotorSpeed" Grid.Row="3" Grid.Column="1"  
+                Click="TimeMotorSpeed_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="StopMotor" Grid.Row="3" Grid.Column="2" 
+                Click="StopMotor_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="SetLed" Grid.Row="3" Grid.Column="3"  
+                Click="SetLed_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="PlaySound" Grid.Row="3" Grid.Column="4" 
+                Click="PlaySound_Click"  >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+
+        <!--Row 4-->
+        <Button x:Name="Draw" Grid.Row="4" Grid.Column="0" 
+                Click="Draw_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+
+
+        <Button x:Name="BatchNoReply" Grid.Row="4" Grid.Column="1" 
+                Click="BatchNoReply_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+        <Button x:Name="BatchReply" Grid.Row="4" Grid.Column="2" 
+                Click="BatchReply_Click" >
+            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+        </Button>
+
+        <!--Row 5-->
+        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
+
+            <TextBox x:Name="Output" Height="29" VerticalContentAlignment="Center"/>
+
+            <ListBox x:Name="InputPorts" ItemsSource="{Binding}" Margin="0,5,0,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+							<Run Text="Index: "/><TextBlock Text="{Binding Key}"/>
+							<Run Text=", Type: "/><TextBlock Text="{Binding Value.Type}"/>
+							<Run Text=", Mode: "/><TextBlock Text="{Binding Value.Mode}"/>
+							<Run Text=", SI Value: "/><TextBlock Text="{Binding Value.SIValue}"/>
+							<Run Text=", Raw Value: "/><TextBlock Text="{Binding Value.RawValue}"/>
+							<Run Text=", Pct Value: "/><TextBlock Text="{Binding Value.PercentValue}"/>
+						</TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <TextBlock x:Name="Buttons" Margin="0,5,0,0">
+			    <Run Text="Up: "/><TextBlock Text="{Binding Up}"/><LineBreak/>
+			    <Run Text="Down: "/><TextBlock Text="{Binding Down}"/><LineBreak/>
+			    <Run Text="Left: "/><TextBlock Text="{Binding Left}"/><LineBreak/>
+			    <Run Text="Right: "/><TextBlock Text="{Binding Right}"/><LineBreak/>
+			    <Run Text="Back: "/><TextBlock Text="{Binding Back}"/><LineBreak/>
+			    <Run Text="Enter: "/><TextBlock Text="{Binding Enter}"/><LineBreak/>
+		    </TextBlock>
+        </StackPanel>
+
+    </Grid>
+
+    <!--<StackPanel>
         <StackPanel Orientation="Horizontal">
             <ComboBox x:Name="Ports"/>
             <Button x:Name="Connect" Click="Connect_Click">Connect</Button>
@@ -53,5 +217,5 @@
 			<Run Text="Back: "/><TextBlock Text="{Binding Back}"/><LineBreak/>
 			<Run Text="Enter: "/><TextBlock Text="{Binding Enter}"/><LineBreak/>
 		</TextBlock>
-    </StackPanel>
+    </StackPanel>-->
 </Window>
