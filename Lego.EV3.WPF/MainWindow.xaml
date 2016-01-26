@@ -80,9 +80,9 @@
         </Button>
 
 
-        <Button x:Name="TurnMotorPower" Grid.Row="2" Grid.Column="1" 
+        <Button x:Name="TurnMotorPower" Grid.Row="2" Grid.Column="1" ToolTip="Turn Motor Power"
                 Click="TurnMotorPower_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/engine.png" />
         </Button>
         <Button x:Name="TurnMotorSpeed" Grid.Row="2" Grid.Column="2" 
                 Click="TurnMotorSpeed_Click" >
