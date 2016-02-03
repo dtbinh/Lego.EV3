@@ -97,11 +97,11 @@
         <!--Row 3-->
         <Button x:Name="TimeMotorPower" Grid.Row="3" Grid.Column="0"  ToolTip="Time Motor Power" 
                 Click="TimeMotorPower_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/engine-power-time.png" />
         </Button>
         <Button x:Name="TimeMotorSpeed" Grid.Row="3" Grid.Column="1"   ToolTip="Time Motor Speed"
                 Click="TimeMotorSpeed_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/engine-speed-time.png" />
         </Button>
 
 
@@ -115,7 +115,7 @@
         </Button>
         <Button x:Name="PlaySound" Grid.Row="3" Grid.Column="4" 
                 Click="PlaySound_Click"  >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/play_tone.png" />
         </Button>
 
         <!--Row 4-->
