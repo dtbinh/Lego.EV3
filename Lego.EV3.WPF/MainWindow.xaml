@@ -79,37 +79,39 @@
         </Button>
         <Button x:Name="TurnMotorPower" Grid.Row="2" Grid.Column="1" ToolTip="Turn Motor Power"
                 Click="TurnMotorPower_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/engine.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/engine-power-turn.png" />
         </Button>
-        <Button x:Name="TurnMotorSpeed" Grid.Row="2" Grid.Column="2" 
+        <Button x:Name="TurnMotorSpeed" Grid.Row="2" Grid.Column="2" ToolTip="Turn Motor Speed"
                 Click="TurnMotorSpeed_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/engine-speed-turn.png" />
         </Button>
-        <Button x:Name="StepMotorPower" Grid.Row="2" Grid.Column="3"  
+        <Button x:Name="StepMotorPower" Grid.Row="2" Grid.Column="3"  ToolTip="Step Motor Power"
                 Click="StepMotorPower_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/step-engine-power.png"  />
         </Button>
-        <Button x:Name="StepMotorSpeed" Grid.Row="2" Grid.Column="4"  
+        <Button x:Name="StepMotorSpeed" Grid.Row="2" Grid.Column="4"  ToolTip="Step Motor Speed"
                 Click="StepMotorSpeed_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/engine-speed-step.png" />
         </Button>
 
         <!--Row 3-->
-        <Button x:Name="TimeMotorPower" Grid.Row="3" Grid.Column="0"  
+        <Button x:Name="TimeMotorPower" Grid.Row="3" Grid.Column="0"  ToolTip="Time Motor Power" 
                 Click="TimeMotorPower_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
         </Button>
-        <Button x:Name="TimeMotorSpeed" Grid.Row="3" Grid.Column="1"  
+        <Button x:Name="TimeMotorSpeed" Grid.Row="3" Grid.Column="1"   ToolTip="Time Motor Speed"
                 Click="TimeMotorSpeed_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
         </Button>
-        <Button x:Name="StopMotor" Grid.Row="3" Grid.Column="2" 
+
+
+        <Button x:Name="StopMotor" Grid.Row="3" Grid.Column="2"  ToolTip="STOP Motor"
                 Click="StopMotor_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/stop-engine.png" />
         </Button>
-        <Button x:Name="SetLed" Grid.Row="3" Grid.Column="3"  
+        <Button x:Name="SetLed" Grid.Row="3" Grid.Column="3"  ToolTip="Leds"
                 Click="SetLed_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/led.png" />
         </Button>
         <Button x:Name="PlaySound" Grid.Row="3" Grid.Column="4" 
                 Click="PlaySound_Click"  >

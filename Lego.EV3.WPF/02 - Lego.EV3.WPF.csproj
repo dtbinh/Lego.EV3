@@ -111,11 +111,30 @@
     <Resource Include="Images\play_tone.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\engine.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\clear.png" />
     <Resource Include="Images\firmware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\engine-power.png" />
+    <Resource Include="Images\engine-speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\engine-step.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\engine-power-turn.png" />
+    <Resource Include="Images\engine-speed-step.png" />
+    <Resource Include="Images\engine-speed-turn.png" />
+    <Resource Include="Images\engine-time-step.png" />
+    <Resource Include="Images\engine-time-turn.png" />
+    <Resource Include="Images\engine-time.png" />
+    <Resource Include="Images\stop-engine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\led.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\step-engine-power.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
