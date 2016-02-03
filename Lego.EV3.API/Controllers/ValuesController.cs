@@ -13,7 +13,7 @@ namespace Lego.EV3.API.Controllers
 {
     public class ValuesController : ApiController
     {
-        public string Get()
+        public int Get()
         {
             // Retrieve storage account from connection string
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -31,7 +31,9 @@ namespace Lego.EV3.API.Controllers
             //Process the message in less than 30 seconds, and then delete the message
             queue.DeleteMessage(retrievedMessage);
 
-            return retrievedMessage.AsString;
+            int movement = 0;
+            int.TryParse(retrievedMessage.AsString, out movement);
+            return movement;
 
 
         }
