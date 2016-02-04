@@ -46,7 +46,10 @@ namespace Lego.EV3.API.Controllers
 
             // Retrieve a reference to a queue
             CloudQueue queue = queueClient.GetQueueReference("myqueue");
-          
+
+            // Create the queue if it doesn't already exist.
+            queue.CreateIfNotExists();
+
             // Fetch the queue attributes.
             queue.FetchAttributes();
 
@@ -84,10 +87,10 @@ namespace Lego.EV3.API.Controllers
                movement = calculateVotes(votes);
               
             }
-            //if there are not messaged in the queue the movement will be 1
+            //if there are not messaged in the queue the movement will be 0, not a movement
             else
             {
-                movement = 1;
+                movement = 0;
             }
 
            return movement;
