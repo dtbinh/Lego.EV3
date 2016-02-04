@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using Microsoft.AspNet.SignalR;
 using System.Diagnostics;
 using Lego.EV3.Shared;
+using System.Threading.Tasks;
 
 namespace Lego.EV3.Web.Hubs
 {
@@ -15,21 +16,18 @@ namespace Lego.EV3.Web.Hubs
             Trace.TraceInformation("SendDriveCommand: " + command.ToString());
 
             //call to BeAPI
-            ////using (var client = new HttpClient())
-            ////{
-            ////    client.BaseAddress = new Uri("http://legoev3api.azurewebsites.net/");
-            ////    client.DefaultRequestHeaders.Accept.Clear();
-            ////    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://legoev3api.azurewebsites.net/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            ////    // New code:
-            ////    HttpResponseMessage response = await client.PostAsJsonAsync("api/values", command.ToString());
-            ////    if (response.IsSuccessStatusCode)
-            ////    {
-            ////        var a = response.Headers.Location;
-            ////    }
-
-
-            ////}
+                var response = client.PostAsJsonAsync("api/values", (int)command).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var a = response.Headers.Location;
+                }
+            }
 
 
         }

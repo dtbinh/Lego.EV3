@@ -25,13 +25,13 @@
 
     //lookup to display a friendly label versus the enum value
     function lookup(id) {
-        if (id == 0)
-            return "Forward";
         if (id == 1)
-            return "Back";
-        if (id == 2)
-            return "Left";
+            return "Forward";
         if (id == 3)
+            return "Back";
+        if (id == 4)
+            return "Left";
+        if (id == 2)
             return "Right";
     }
 

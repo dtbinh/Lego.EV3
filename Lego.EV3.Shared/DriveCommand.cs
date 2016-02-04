@@ -8,9 +8,9 @@ namespace Lego.EV3.Shared
 {
     public enum DriveCommand
     {
-        Forward = 0,
-        Back = 1,
-        Left = 2,
-        Right = 3
+        Forward = 1,
+        Back = 2,
+        Left = 3,
+        Right = 4
     }
 }
