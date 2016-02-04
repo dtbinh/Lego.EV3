@@ -87,10 +87,10 @@ namespace Lego.EV3.API.Controllers
                movement = calculateVotes(votes);
               
             }
-            //if there are not messaged in the queue the movement will be 1
+            //if there are not messaged in the queue the movement will be 0, not a movement
             else
             {
-                movement = 1;
+                movement = 0;
             }
 
            return movement;
