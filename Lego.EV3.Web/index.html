@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    
+
+    <script src="/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="signalr/hubs"></script>
+
+
+    <script src="/Scripts/bootstrap.min.js"></script>
+
+    <script src="/Scripts/vote.js"></script>
+
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1>¡¡Controla nuestro Robot LEGO!!</h1>
+    </div>
+
+
+    <div class="container">
+        <div class="col-md-6">
+            <div class="row">
+                <button id="forward" value="0" class="btn btn-success">&#8657;</button>
+            </div>
+            <div class="row">
+                <button id="left" value="2" class="btn btn-success">&#8656;</button>
+                <button id="right" value="3" class="btn btn-success">&#8658;</button>
+            </div>
+            <div class="row">
+                <button id="back" value="1" class="btn btn-success">&#8659;</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <!-- Results will be displayed here -->
+            <div class="row" style="font-size: 40px;">
+                <div id="sensorDistance"></div>
+                <div id="first"></div>
+                <div id="second"></div>
+                <div id="third"></div>
+                <div id="fourth"></div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

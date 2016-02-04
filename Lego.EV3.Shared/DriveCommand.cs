@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lego.EV3.Shared
 {
-    public class Class1
+    public enum DriveCommand
     {
+        Forward = 0,
+        Back = 1,
+        Left = 2,
+        Right = 3
     }
 }
