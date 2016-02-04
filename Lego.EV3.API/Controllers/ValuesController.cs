@@ -46,7 +46,10 @@ namespace Lego.EV3.API.Controllers
 
             // Retrieve a reference to a queue
             CloudQueue queue = queueClient.GetQueueReference("myqueue");
-          
+
+            // Create the queue if it doesn't already exist.
+            queue.CreateIfNotExists();
+
             // Fetch the queue attributes.
             queue.FetchAttributes();
 
