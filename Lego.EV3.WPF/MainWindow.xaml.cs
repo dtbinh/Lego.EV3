@@ -165,6 +165,5 @@ namespace Lego.EV3.WPF
             Output.Text = BitConverter.ToString(b);
         }
 
-
     }
 }

@@ -132,6 +132,7 @@
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
         </Button>
 
+
         <!--Row 5-->
         <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
 
