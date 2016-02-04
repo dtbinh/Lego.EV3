@@ -13,30 +13,6 @@ namespace Lego.EV3.API.Controllers
 {
     public class ValuesController : ApiController
     {
-        public int Get()
-        {
-            // Retrieve storage account from connection string
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-            Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
-
-            // Create the queue client
-            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-
-            // Retrieve a reference to a queue
-            CloudQueue queue = queueClient.GetQueueReference("myqueue");
-
-            // Get the next message
-            CloudQueueMessage retrievedMessage = queue.GetMessage();
-
-            //Process the message in less than 30 seconds, and then delete the message
-            queue.DeleteMessage(retrievedMessage);
-
-            int movement = 0;
-            int.TryParse(retrievedMessage.AsString, out movement);
-            return movement;
-
-
-        }
         // POST api/values
         public void Post([FromBody]int value)
         {
@@ -58,6 +34,81 @@ namespace Lego.EV3.API.Controllers
             queue.AddMessage(message);
 
 
+        }
+        public int Get()
+        {
+            // Retrieve storage account from connection string
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+            Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+            // Create the queue client
+            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
+            // Retrieve a reference to a queue
+            CloudQueue queue = queueClient.GetQueueReference("myqueue");
+          
+            // Fetch the queue attributes.
+            queue.FetchAttributes();
+
+            // Retrieve the cached approximate message count.
+            int? cachedMessageCount = queue.ApproximateMessageCount;
+            //number of messages that are going to be processed
+            int numberOfMessages = 0;
+            //resulting movement of the Lego
+            int movement = 0;
+            //movement dequeued
+            int dequeuedMessage = 0;
+            //if there are messages in the queue, calculate the movement from the votes
+            if (cachedMessageCount != 0)
+            {
+                //if there are less than 32 messsages there will be all processed
+                if (cachedMessageCount < 32)
+                {
+                    numberOfMessages = (int)cachedMessageCount;
+                }
+                //if there are more than 32 messages, 32 will be processed
+                else
+                {
+                    numberOfMessages = 32;
+                }
+                //array for votes
+                int[] votes = new int[4];
+                //calculate the votation
+                foreach (CloudQueueMessage message in queue.GetMessages(numberOfMessages, TimeSpan.FromSeconds(30)))
+                {
+                    // Process  messages in less than 30 second, deleting each message after processing.
+                    int.TryParse(message.AsString, out dequeuedMessage);
+                    votes[dequeuedMessage-1]++;                  
+                    queue.DeleteMessage(message);
+                }
+               movement = calculateVotes(votes);
+              
+            }
+            //if there are not messaged in the queue the movement will be 1
+            else
+            {
+                movement = 1;
+            }
+
+           return movement;
+        }
+
+
+
+        //method for calculating the most voted movement
+        private int calculateVotes(int[] votes)
+        {
+            int maxNumberOfVotes = votes[0];
+            int result = 0;
+            for(int i = 1; i < votes.Length; i++)
+            {
+                if (votes[i] > maxNumberOfVotes)
+                {
+                    result = i;
+                }
+            }
+               
+            return result+1;
         }
 
         //// GET api/values
