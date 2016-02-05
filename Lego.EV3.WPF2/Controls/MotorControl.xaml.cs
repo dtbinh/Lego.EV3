@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 using Lego.EV3.Core;
 
-namespace Lego.EV3.WPF2
+namespace Lego.EV3.WPF2.Controls
 {
     /// <summary>
     /// Interaction logic for MotorControl.xaml

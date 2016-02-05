@@ -4,10 +4,9 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Lego.EV3.Core;
 using Microsoft.Win32.SafeHandles;
 
-namespace Lego.Ev3.Core
+namespace Lego.EV3.Core
 {
 	/// <summary>
 	/// Communicate with EV3 brick over USB HID.

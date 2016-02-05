@@ -73,6 +73,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\SensorDataControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SensorSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +101,12 @@
     <Compile Include="Controls\ProgressOverlayControl.xaml.cs">
       <DependentUpon>ProgressOverlayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SensorDataControl.xaml.cs">
+      <DependentUpon>SensorDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SensorSettingsControl.xaml.cs">
+      <DependentUpon>SensorSettingsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\DoubleRoundedConverter.cs" />
     <Compile Include="Converters\IndexToVisibilityConverter.cs" />
@@ -102,6 +116,7 @@
     <Compile Include="Enums\MotorMovementTypes.cs" />
     <Compile Include="Enums\MotorStyles.cs" />
     <Compile Include="EventArgs\MotorSettingsEventArgs.cs" />
+    <Compile Include="EventArgs\SensorSettingsEventArgs.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

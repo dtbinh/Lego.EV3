@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace Lego.EV3.WPF2
+namespace Lego.EV3.WPF2.Controls
 {
 
     /// <summary>
