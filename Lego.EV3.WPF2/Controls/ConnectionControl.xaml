@@ -12,7 +12,7 @@
 	</UserControl.Resources>
 	<Grid>
 		<Rectangle Fill="#ccc" Opacity=".85" />
-		<Border Padding="15" Background="#FFE78CFF"  VerticalAlignment="Top">
+        <Border Padding="15" Background="#FF61BD"  VerticalAlignment="Top">
 			<StackPanel>
 				<TextBlock
 					Foreground="White"

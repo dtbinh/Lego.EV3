@@ -11,7 +11,7 @@
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
-		<Border Grid.Row="0" Padding="10, 10, 10, 10" Background="Pink" Margin="0, 0, 0, 10">
+		<Border Grid.Row="0" Padding="10, 10, 10, 10" Background="#FFC0E5" Margin="0, 0, 0, 10">
 			<Grid>
 				<TextBlock FontSize="24">
 					<Run Text="LEGO MINDSTORMS EV3"/>
@@ -85,28 +85,28 @@
 			</StackPanel>
 		</Grid>
 
-        <controls:ConnectionControl 
+		<controls:ConnectionControl 
 			Grid.Row="1"
 			Visibility="Collapsed"
 			x:Name="ConnControl"
 			ConnectToBrick="TryToConnect" />
 
-        <controls:MotorSettingsControl
+		<controls:MotorSettingsControl
 			Grid.Row="1" 
 			Visibility="Collapsed"
 			x:Name="MotorSettings" />
 
-        <controls:SensorSettingsControl
+		<controls:SensorSettingsControl
 			Grid.Row="1" 
 			Visibility="Collapsed"
 			x:Name="SensorSettings" />
 
-        <controls:ProgressOverlayControl
+		<controls:ProgressOverlayControl
 			Grid.Row="0"
 			Grid.RowSpan="2"
 			x:Name="Overlay"
 			Visibility="Collapsed" />
-    </Grid>
+	</Grid>
 
 	
 </Window>

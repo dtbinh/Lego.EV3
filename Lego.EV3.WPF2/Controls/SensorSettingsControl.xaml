@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid x:Name="LayoutRoot">
         <Rectangle Fill="#ccc" Opacity=".85" />
-        <Border Padding="15" Background="#111"  VerticalAlignment="Top">
+        <Border Padding="15" Background="#FF61BD"  VerticalAlignment="Top">
             <StackPanel>
                 <TextBlock
 						Foreground="White"
