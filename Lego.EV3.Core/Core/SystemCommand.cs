@@ -39,7 +39,7 @@ namespace Lego.EV3.Core
 #else
 		Task
 #endif
-		WriteFileAsync([ReadOnlyArray]byte[] data, string devicePath)
+		WriteFileAsync(byte[] data, string devicePath)
 		{
 			return WriteFileAsyncInternal(data, devicePath)
 #if WINRT
@@ -204,10 +204,11 @@ namespace Lego.EV3.Core
 			throw new NotImplementedException("On Android, please use WriteFileAsync instead of CopyFileAsync");
 		}
 #else
-		private Task<byte[]> GetFileContents(string localPath)
-		{
-			return Task.FromResult(File.ReadAllBytes(localPath));
-		}
+        private Task<byte[]> GetFileContents(string localPath)
+        {
+            // return Task.FromResult(/*File.ReadAllBytes(localPath)*/);
+            return new Task<byte[]>(null);
+        }
 #endif
-	}
+    }
 }

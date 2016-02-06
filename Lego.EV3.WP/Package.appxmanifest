@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
 
-  <Identity Name="8c27de0f-0d2b-4d02-9bf6-94e63d6f3a5d"
+  <Identity Name="3b53e67f-b786-417b-9e2d-c548cd2836a3"
             Publisher="CN=isacabe"
             Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="8c27de0f-0d2b-4d02-9bf6-94e63d6f3a5d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="3b53e67f-b786-417b-9e2d-c548cd2836a3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Lego.EV3.WP</DisplayName>
