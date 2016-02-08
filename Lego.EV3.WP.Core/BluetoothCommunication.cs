@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using Lego.EV3.Core;
+using Lego.EV3;
 using Windows.Networking.Proximity;
 using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 
+using ThreadPool = Windows.System.Threading.ThreadPool;
 
 namespace Lego.EV3.WP.Core
 {
@@ -60,8 +62,9 @@ namespace Lego.EV3.WP.Core
 			
 			//¿qué hacía esto en wp 8.0?
 			//ThreadPool.QueueUserWorkItem(PollInput);
-			
-		}
+            await ThreadPool.RunAsync(PollInput);
+
+        }
 
 		private async void PollInput(object state)
 		{
