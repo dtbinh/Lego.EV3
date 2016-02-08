@@ -2,6 +2,17 @@
 using System.Globalization;
 using System.Windows;
 
+
+#if WINDOWS_STORE
+
+using Windows.UI.Xaml;
+
+#elif WINDOWS_PHONE
+
+using System.Windows;
+
+#endif
+
 namespace Lego.EV3.WPF2.Converters
 {
     public class DoubleRoundedConverter : ValueConverter

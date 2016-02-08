@@ -1,22 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
-
-using System.Windows;
-
-#if WINDOWS_STORE
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-#elif WINDOWS_PHONE
-
-using System.Windows;
-
-#endif
-
-
-namespace Lego.EV3.WPF2.Converters
+namespace Lego.EV3.WP2.Converters
 {
-    public class MotorValueTimerConverter : ValueConverter
+    class DoubleRoundedConverter:ValueConverter
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture, string language)
         {
@@ -34,14 +26,7 @@ namespace Lego.EV3.WPF2.Converters
                 double parseValue;
                 double.TryParse(value.ToString(), out parseValue);
 
-                if (parseValue <= 0)
-                {
-                    returnValue = "continuous";
-                }
-                else
-                {
-                    returnValue = Math.Round(parseValue, roundValue).ToString(CultureInfo.InvariantCulture) + " sec";
-                }
+                returnValue = Math.Round(parseValue, roundValue).ToString(CultureInfo.InvariantCulture);
             }
 
             return returnValue;

@@ -1,19 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.Windows;
-
-#if WINDOWS_STORE
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-#elif WINDOWS_PHONE
-
-using System.Windows;
-#endif
-
-namespace Lego.EV3.WPF2.Converters
+namespace Lego.EV3.WP2.Converters
 {
-    public class IndexToVisibilityConverter : ValueConverter
+    class IndexToVisibilityConverter:ValueConverter
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture, string language)
         {
