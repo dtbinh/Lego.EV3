@@ -28,6 +28,8 @@ namespace Lego.EV3.WP.Plebiscite
 
         public static string LegoAPIUrl = "http://legoev3api.azurewebsites.net/";
 
+        public static string connectionTopicString = "Endpoint=sb://legodemoeventhub-ns.servicebus.windows.net/;SharedAccessKeyName=ADMIN;SharedAccessKey=q5Gcwg+Ky55vQ0/xr4znrzCSPmFUtznjNRQ9aZmBgok=";
+
         private TransitionCollection transitions;
 
         /// <summary>
@@ -97,7 +99,7 @@ namespace Lego.EV3.WP.Plebiscite
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(VoteDrive), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }

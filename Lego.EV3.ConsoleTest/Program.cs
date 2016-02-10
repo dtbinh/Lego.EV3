@@ -7,7 +7,10 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Timers;
 using System.Threading.Tasks;
-
+using Microsoft.ServiceBus.Messaging;
+using System.Configuration;
+using Microsoft.ServiceBus;
+using System.Threading;
 
 namespace Lego.EV3.ConsoleTest
 {
@@ -16,9 +19,16 @@ namespace Lego.EV3.ConsoleTest
         static Brick _brick;
         static void Main(string[] args) {
 
-            Task t = Test();
-            t.Wait();
-            System.Console.ReadKey();
+            Test2();
+
+            //Test3();
+
+            //Task t = Test();
+            //t.Wait();
+            //System.Console.ReadKey();
+
+           
+
 
         }
 
@@ -52,10 +62,10 @@ namespace Lego.EV3.ConsoleTest
 
             System.Console.WriteLine("Getting result...");
 
-            Timer tmr = new Timer();           
-            tmr.Interval = 3000; // 6 second
-            tmr.Elapsed += Tmr_Elapsed;
-            tmr.Start(); // The countdown is launched!
+            //Timer tmr = new Timer();           
+            //tmr.Interval = 3000; // 6 second
+            //tmr.Elapsed += Tmr_Elapsed;
+            //tmr.Start(); // The countdown is launched!
 
 
            
@@ -108,6 +118,68 @@ namespace Lego.EV3.ConsoleTest
         static void _brick_BrickChanged(object sender, BrickChangedEventArgs e)
         {
             System.Console.WriteLine(e.Ports[InputPort.Four].SIValue);
+        }
+
+        static async void Test2() {
+
+            try
+            {
+                CancellationTokenSource source = new CancellationTokenSource();
+                string connectionString = ConfigurationManager.AppSettings["TopicConnectionString"];
+            
+                 var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
+
+               // var namespaceManager2 = NamespaceManager.CreateFromConnectionString(connectionString2);
+
+                if (!namespaceManager.TopicExists("legotopic"))
+                {
+                    namespaceManager.CreateTopic("legotopic");
+                }
+
+
+                ReceiveMessage(connectionString, "legotopic", "legosubs", source.Token);
+
+                Console.ReadKey();
+                source.Cancel();
+                Console.ReadKey();
+            }
+            catch (Exception ex)
+            {
+
+                System.Diagnostics.Trace.WriteLine($"{ex.Message}");
+            }
+            
+
+
+           
+
+           
+
+        }
+
+        static public async void ReceiveMessage(string connectionString, string topicPath, string subscriptionName, CancellationToken token )
+        {
+            while (!token.IsCancellationRequested)
+            {
+                try
+                {
+                    var subscriptionClient = SubscriptionClient.CreateFromConnectionString(connectionString, topicPath, subscriptionName);
+                    var brokeredMessage = await subscriptionClient.ReceiveAsync(TimeSpan.FromSeconds(2));
+                    if (brokeredMessage != null)
+                    {
+                        var message = brokeredMessage.GetBody<string>();
+                        Console.WriteLine(message);
+                        await brokeredMessage.CompleteAsync();
+                        //var message = brokeredMessage.GetBody<TestMessage>();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    System.Diagnostics.Trace.WriteLine($"{ex.Message}");
+                }
+            }            
+            
         }
     }
 }
