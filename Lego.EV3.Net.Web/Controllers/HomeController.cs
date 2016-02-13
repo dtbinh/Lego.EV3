@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.ServiceBus.Messaging;
+using System.Text;
+using System.Configuration;
 
 namespace Lego.EV3.Net.Web.Controllers
 {
@@ -26,5 +30,49 @@ namespace Lego.EV3.Net.Web.Controllers
 
             return View();
         }
+
+        public async System.Threading.Tasks.Task<JsonResult> SendMovement(int movement)
+        {
+            try
+            {
+                //Put all of the data into a single class
+                EventHubData ehd = new EventHubData() { Movement = movement};
+
+                //serialize it
+                var serializedString = JsonConvert.SerializeObject(ehd);
+
+                ////Create the Event Data object so the data and partition are known
+                EventData data = new EventData(Encoding.UTF8.GetBytes(serializedString))
+                {
+                    PartitionKey = "0"
+                };
+
+
+                ////Get a reference to the event hub
+                EventHubClient client = EventHubClient.CreateFromConnectionString(ConfigurationManager.AppSettings["Microsoft.ServiceBus.ConnectionString"], "legodemoeventhub");
+
+
+                ////Send the data
+                await client.SendAsync(data);
+
+
+                //Return to the client
+
+                return Json("", JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
+        }
+    }
+
+    public class EventHubData
+    {
+        public int Movement { get; set; }
     }
 }
