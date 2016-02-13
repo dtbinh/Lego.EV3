@@ -129,13 +129,11 @@ namespace Lego.EV3.ConsoleTest
             
                  var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
 
-               // var namespaceManager2 = NamespaceManager.CreateFromConnectionString(connectionString2);
 
                 if (!namespaceManager.TopicExists("legotopic"))
                 {
                     namespaceManager.CreateTopic("legotopic");
                 }
-
 
                 ReceiveMessage(connectionString, "legotopic", "legosubs", source.Token);
 
