@@ -120,7 +120,7 @@ namespace Lego.EV3.ConsoleTest
             System.Console.WriteLine(e.Ports[InputPort.Four].SIValue);
         }
 
-        static async void Test2() {
+        static  void Test2() {
 
             try
             {

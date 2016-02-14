@@ -27,7 +27,7 @@ namespace Lego.EV3.WP.Plebiscite
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
         //SignalR Hub proxy
-        private IHubProxy _hubProxy;
+      //  private IHubProxy _hubProxy;
         private LegoWrapper _lego = new LegoWrapper();
         private int _distance;
 
@@ -112,7 +112,7 @@ namespace Lego.EV3.WP.Plebiscite
 
         #endregion
 
-        private async void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
             //Ya no consumimos con SignalR
 
@@ -128,7 +128,7 @@ namespace Lego.EV3.WP.Plebiscite
                 var subs= new Subscription(topic.Path, "legosubs", App.connectionTopicString);
                 subs.OnMessage((m) => {
                     try {
-                        System.Runtime.Serialization.Json.DataContractJsonSerializer s;
+                        //System.Runtime.Serialization.Json.DataContractJsonSerializer s;
                         var input = m.GetBody<string>();
                      //   var bytes = m.GetBody<Stream>();
                         //string s;
@@ -146,7 +146,7 @@ namespace Lego.EV3.WP.Plebiscite
                 });
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -160,7 +160,8 @@ namespace Lego.EV3.WP.Plebiscite
 
         }
 
-        async void _lego_BrickChanged(object sender, BrickChangedEventArgs e)
+
+        void _lego_BrickChanged(object sender, BrickChangedEventArgs e)
         {
             try
             {
@@ -170,7 +171,7 @@ namespace Lego.EV3.WP.Plebiscite
                     _distance = (int)e.Ports[InputPort.Four].SIValue;
 
                     //Send the new distance to the SignalRHub 
-                    await _hubProxy.Invoke("SendUpdatedSensorData", _distance);
+                   // await _hubProxy.Invoke("SendUpdatedSensorData", _distance);
                 }
             }
             catch (Exception ex)
