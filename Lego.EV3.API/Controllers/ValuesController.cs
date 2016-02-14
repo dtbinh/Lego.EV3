@@ -16,27 +16,33 @@ namespace Lego.EV3.API.Controllers
         // POST api/values
         public void Post([FromBody]int value)
         {
-            // Retrieve storage account from connection string
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-            Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
+            //the only admitted values are from 1 to 4
+            if(value>=1 && value <= 4)
+            {
+                // Retrieve storage account from connection string
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
-            // Create the queue client.
-            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+                // Create the queue client.
+                CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-            // Retrieve a reference to a queue.
-            CloudQueue queue = queueClient.GetQueueReference("myqueue");
+                // Retrieve a reference to a queue.
+                CloudQueue queue = queueClient.GetQueueReference("myqueue");
 
-            // Create the queue if it doesn't already exist.
-            queue.CreateIfNotExists();
+                // Create the queue if it doesn't already exist.
+                queue.CreateIfNotExists();
 
-            // Create a message and add it to the queue.
-            CloudQueueMessage message = new CloudQueueMessage(value.ToString());
-            queue.AddMessage(message);
+                // Create a message and add it to the queue.
+                CloudQueueMessage message = new CloudQueueMessage(value.ToString());
+                queue.AddMessage(message);
+            }
+           
 
 
         }
         public int Get()
         {
+           
             // Retrieve storage account from connection string
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
             Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));

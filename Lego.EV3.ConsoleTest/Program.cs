@@ -146,13 +146,7 @@ namespace Lego.EV3.ConsoleTest
 
                 System.Diagnostics.Trace.WriteLine($"{ex.Message}");
             }
-            
-
-
-           
-
-           
-
+    
         }
 
         static public async void ReceiveMessage(string connectionString, string topicPath, string subscriptionName, CancellationToken token )
