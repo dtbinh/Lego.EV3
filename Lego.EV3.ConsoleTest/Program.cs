@@ -156,7 +156,7 @@ namespace Lego.EV3.ConsoleTest
                 try
                 {
                     var subscriptionClient = SubscriptionClient.CreateFromConnectionString(connectionString, topicPath, subscriptionName);
-                    var brokeredMessage = await subscriptionClient.ReceiveAsync(TimeSpan.FromSeconds(2));
+                    var brokeredMessage = await subscriptionClient.ReceiveAsync(TimeSpan.FromSeconds(1));
                     if (brokeredMessage != null)
                     {
                         var message = brokeredMessage.GetBody<string>();
