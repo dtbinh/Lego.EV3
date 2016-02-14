@@ -36,7 +36,7 @@ namespace Lego.EV3.Net.Web.Controllers
             try
             {
                 //Put all of the data into a single class
-                EventHubData ehd = new EventHubData() { Movement = movement};
+                EventHubData ehd = new EventHubData() { Movement = movement, EntryTime= DateTime.UtcNow};
 
                 //serialize it
                 var serializedString = JsonConvert.SerializeObject(ehd);
@@ -74,5 +74,6 @@ namespace Lego.EV3.Net.Web.Controllers
     public class EventHubData
     {
         public int Movement { get; set; }
-    }
+        public DateTime EntryTime { get; set; }
+}
 }
