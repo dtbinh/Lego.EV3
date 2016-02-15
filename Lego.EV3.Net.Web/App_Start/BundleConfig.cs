@@ -19,6 +19,9 @@ namespace Lego.EV3.Net.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/signalR").Include(
+                        "~/Scripts/jquery.signalR-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/vote.js",

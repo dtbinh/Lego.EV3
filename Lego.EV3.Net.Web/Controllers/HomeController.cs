@@ -75,5 +75,5 @@ namespace Lego.EV3.Net.Web.Controllers
     {
         public int Movement { get; set; }
         public DateTime EntryTime { get; set; }
-}
+    }
 }
