@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Microsoft.ServiceBus.Messaging;
 using System.Text;
 using System.Configuration;
+using Lego.EV3.Shared;
 
 namespace Lego.EV3.Net.Web.Controllers
 {
@@ -71,9 +72,5 @@ namespace Lego.EV3.Net.Web.Controllers
         }
     }
 
-    public class EventHubData
-    {
-        public int Movement { get; set; }
-        public DateTime EntryTime { get; set; }
-    }
+
 }

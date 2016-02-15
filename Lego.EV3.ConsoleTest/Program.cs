@@ -49,8 +49,7 @@ namespace Lego.EV3.ConsoleTest
 
             //System.Console.WriteLine("Connected...Turning motor...");
 
-            ////mueve la rueda izquierda
-            //await _brick.DirectCommand.TurnMotorAtSpeedForTimeAsync(OutputPort.B, 0x25, 1000, false);
+            
 
             ////mueve la rueda derecha
             //await _brick.DirectCommand.TurnMotorAtSpeedForTimeAsync(OutputPort.C, 0x50, 1000, false);

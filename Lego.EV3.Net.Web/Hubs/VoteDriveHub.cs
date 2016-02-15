@@ -14,8 +14,6 @@ namespace Lego.EV3.Net.Web.Hubs
         public void SendDriveCommand(DriveCommand command)
         {
             Trace.TraceInformation("SendDriveCommand: " + command.ToString());
-
-
         }
 
     }

@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lego.EV3.Shared
+namespace _04___Lego.EV3.ConsoleVote
 {
-    public enum DriveCommand
+    class Program
     {
-        Forward = 1,
-        Back = 3,
-        Left = 4,
-        Right = 2
+        static void Main(string[] args)
+        {
+        }
     }
 }
