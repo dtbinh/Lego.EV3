@@ -18,6 +18,7 @@ namespace Lego.EV3.ConsoleVote
     class Program
     {
         static Brick _brick;
+        static DateTime lastime = TimeZoneInfo.ConvertTimeToUtc(DateTime.Now);
         static void Main(string[] args)
         {
             StartLego();
@@ -86,14 +87,19 @@ namespace Lego.EV3.ConsoleVote
                         var message = brokeredMessage.GetBody<string>();                        
 
                         var movement = JsonConvert.DeserializeObject<EventHubVotes>(message);
-                                            
+
                        
-                         Console.WriteLine("Movimiento: " + movement.Movement + " - Votos: " + movement.Votes + " - Time: " + movement.Time);
-                        
-                        MoveLego(movement.Movement);
-                        
-                       
-                        await brokeredMessage.CompleteAsync();
+                        if(!lastime.Equals(movement.Time))
+                        {
+                            Console.WriteLine("Movimiento: " + movement.Movement + " - Votos: " + movement.Votes + " - Time: " + movement.Time);
+
+                            MoveLego(movement.Movement);
+
+                            lastime = movement.Time;
+                            await brokeredMessage.CompleteAsync();
+
+                        }
+
 
                     }
                 }
