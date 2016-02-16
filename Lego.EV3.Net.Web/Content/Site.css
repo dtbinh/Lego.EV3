@@ -49,3 +49,15 @@ textarea {
         width: 60px;
         height: 60px;
     }
+
+.votesTable > thead > tr > th {
+    text-align:center;
+}
+
+.votesTable > tbody > tr > td {
+    text-align: right;
+}
+
+.votesTable > tbody > tr > td.currentWinner {
+    background-color: lightgreen;
+}
