@@ -12,6 +12,13 @@
         console.log("cmdToRun:" + cmd);
     }
 
+    voteHub.client.updateVotesCounter = function (currentCounterValues) {
+        $('#votesLeft').text(currentCounterValues['Left']);
+        $('#votesForward').text(currentCounterValues['Forward']);
+        $('#votesRight').text(currentCounterValues['Right']);
+        $('#votesBack').text(currentCounterValues['Back']);
+    };
+
     // Start the connection.
     $.connection.hub.start().done(function () {
         $("button").button().click(function () {
