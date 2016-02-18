@@ -1,22 +1,24 @@
-﻿<Window x:Class="Lego.EV3.HelloMotors.MainWindow"
+﻿<Window x:Class="Lego.EV3.HelloSensors.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lego.EV3.HelloMotors"
+        xmlns:local="clr-namespace:Lego.EV3.HelloSensors"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
-        <Window.Resources>
+     <Window.Resources>
             <Style TargetType="{x:Type Button}">
                 <Setter Property="FontSize" Value="32"></Setter>
             </Style>
         </Window.Resources>
-        <Grid>
-
+    <Grid>
+        
             <Button FontFamily="WingDings" Content="&#xF0E1;" HorizontalAlignment="Left" Margin="65,67,0,0" VerticalAlignment="Top" Width="55" Click="ForwardButton_Click"></Button>
             <Button FontFamily="WingDings" Content="&#xF0E2;" HorizontalAlignment="Left" Margin="65,158,0,0" VerticalAlignment="Top" Width="55" Click="BackwardButton_Click" ></Button>
             <Button FontFamily="WingDings" Content="&#xF0DF;" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="55" Click="LeftButton_Click"></Button>
             <Button FontFamily="WingDings" Content="&#xF0E0;" HorizontalAlignment="Left" Margin="120,113,0,0" VerticalAlignment="Top" Width="55" Click="RightButton_Click" ></Button>
         
-        </Grid>
+            <Label x:Name="txtDistance" FontSize="40" Content="" HorizontalAlignment="Left" Margin="285,85,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
 </Window>

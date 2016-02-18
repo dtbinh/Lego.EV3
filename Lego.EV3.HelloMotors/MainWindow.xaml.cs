@@ -47,10 +47,6 @@ namespace Lego.EV3.HelloMotors
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ForwardButton_Click(object sender, RoutedEventArgs e)
         {
