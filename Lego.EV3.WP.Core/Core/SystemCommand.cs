@@ -204,11 +204,11 @@ namespace Lego.EV3.Core
 			throw new NotImplementedException("On Android, please use WriteFileAsync instead of CopyFileAsync");
 		}
 #else
-        private Task<byte[]> GetFileContents(string localPath)
-        {
-            return Task.FromResult(File.ReadAllBytes(localPath));
-            
-        }
+		private Task<byte[]> GetFileContents(string localPath)
+		{
+			return null;
+			
+		}
 #endif
-    }
+	}
 }

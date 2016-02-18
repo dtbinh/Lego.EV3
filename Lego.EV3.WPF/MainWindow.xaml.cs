@@ -110,7 +110,9 @@ namespace Lego.EV3.WPF
 
         private async void PlaySound_Click(object sender, RoutedEventArgs e)
         {
+            //copy the sound file into device
             await UploadFiles();
+
             await _brick.DirectCommand.PlaySoundAsync(50, "../prjs/Tester/Overpower");
         }
 

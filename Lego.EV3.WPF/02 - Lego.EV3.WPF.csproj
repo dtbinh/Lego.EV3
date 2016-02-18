@@ -87,7 +87,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="LEGO.rgf" />
-    <None Include="Overpower.rsf" />
+    <None Include="Overpower.rsf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,6 +143,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\engine-power-time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\play_sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\drawing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

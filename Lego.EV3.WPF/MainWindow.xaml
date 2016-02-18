@@ -113,24 +113,24 @@
                 Click="SetLed_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/led.png" />
         </Button>
-        <Button x:Name="PlaySound" Grid.Row="3" Grid.Column="4" 
+        <Button x:Name="PlaySound" Grid.Row="3" Grid.Column="4" ToolTip="Play Sound"
                 Click="PlaySound_Click"  >
-            <Image Source="/Lego.EV3.WPF;component/Images/play_tone.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/play_sound.png" />
         </Button>
 
         <!--Row 4-->
-        <Button x:Name="Draw" Grid.Row="4" Grid.Column="0" 
+        <Button x:Name="Draw" Grid.Row="4" Grid.Column="0" ToolTip="Drawing"
                 Click="Draw_Click" >
-            <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
+            <Image Source="/Lego.EV3.WPF;component/Images/drawing.png" />
         </Button>
-        <Button x:Name="BatchNoReply" Grid.Row="4" Grid.Column="1" 
+        <!--<Button x:Name="BatchNoReply" Grid.Row="4" Grid.Column="1" 
                 Click="BatchNoReply_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
         </Button>
         <Button x:Name="BatchReply" Grid.Row="4" Grid.Column="2" 
                 Click="BatchReply_Click" >
             <Image Source="/Lego.EV3.WPF;component/Images/connect-icon.png" />
-        </Button>
+        </Button>-->
 
 
         <!--Row 5-->

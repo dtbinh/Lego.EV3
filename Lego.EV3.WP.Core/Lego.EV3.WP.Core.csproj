@@ -118,10 +118,8 @@
     <Compile Include="..\Lego.EV3.Core\Core\ResponseManager.cs">
       <Link>Core\ResponseManager.cs</Link>
     </Compile>
-    <Compile Include="..\Lego.EV3.Core\Core\SystemCommand.cs">
-      <Link>Core\SystemCommand.cs</Link>
-    </Compile>
     <Compile Include="BluetoothCommunication.cs" />
+    <Compile Include="Core\SystemCommand.cs" />
     <Compile Include="NetworkCommunication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
