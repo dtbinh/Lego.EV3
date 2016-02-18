@@ -16,6 +16,8 @@ namespace Lego.EV3.Shared
         public DriveCommand Movement { get; set; }
    
         public int Votes { get; set; }
+        
+        public DateTime Time { get; set; }
 
     }
 }

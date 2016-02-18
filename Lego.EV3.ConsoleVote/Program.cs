@@ -79,14 +79,20 @@ namespace Lego.EV3.ConsoleVote
                 {
                     var subscriptionClient = SubscriptionClient.CreateFromConnectionString(connectionString, topicPath, subscriptionName);
                     var brokeredMessage = await subscriptionClient.ReceiveAsync(TimeSpan.FromSeconds(1));
+                   
+
                     if (brokeredMessage != null)
                     {
                         var message = brokeredMessage.GetBody<string>();                        
 
                         var movement = JsonConvert.DeserializeObject<EventHubVotes>(message);
-                        Console.WriteLine("Movimiento: "+ movement.Movement +"- Votos: "+ movement.Votes);
-
+                                            
+                       
+                         Console.WriteLine("Movimiento: " + movement.Movement + " - Votos: " + movement.Votes + " - Time: " + movement.Time);
+                        
                         MoveLego(movement.Movement);
+                        
+                       
                         await brokeredMessage.CompleteAsync();
 
                     }

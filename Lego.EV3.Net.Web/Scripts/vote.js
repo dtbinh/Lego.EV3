@@ -23,7 +23,7 @@
     $.connection.hub.start().done(function () {
         $("button").button().click(function () {
             //send the current button value
-            $.getJSON("http://localhost:22640/home/SendMovement/?" + $.param({ movement: this.value }), "", function () { });
+            $.getJSON("/home/SendMovement/?" + $.param({ movement: this.value }), "", function () { });
 
             //send the current button value
             voteHub.server.sendDriveCommand(this.value);
