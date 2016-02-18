@@ -1,0 +1,13 @@
+﻿<Window.Resources>
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="32"></Setter>
+    </Style>
+</Window.Resources>
+
+
+		<Button FontFamily="WingDings" Content="&#xF0E1;" HorizontalAlignment="Left" Margin="65,67,0,0" VerticalAlignment="Top" Width="55"></Button>
+        <Button FontFamily="WingDings" Content="&#xF0E2;" HorizontalAlignment="Left" Margin="65,158,0,0" VerticalAlignment="Top" Width="55"></Button>
+        <Button FontFamily="WingDings" Content="&#xF0DF;" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="55"></Button>
+        <Button FontFamily="WingDings" Content="&#xF0E0;" HorizontalAlignment="Left" Margin="120,113,0,0" VerticalAlignment="Top" Width="55" ></Button>
+        
+

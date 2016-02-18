@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:Lego.EV3.HelloMotors"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
-    <Grid>
+        <Window.Resources>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="32"></Setter>
+            </Style>
+        </Window.Resources>
+        <Grid>
+
+        <Button FontFamily="WingDings" Content="&#xF0E1;" HorizontalAlignment="Left" Margin="65,67,0,0" VerticalAlignment="Top" Width="55" Click="ForwardButton_Click"></Button>
+        <Button FontFamily="WingDings" Content="&#xF0E2;" HorizontalAlignment="Left" Margin="65,158,0,0" VerticalAlignment="Top" Width="55" Click="BackwardButton_Click" ></Button>
+        <Button FontFamily="WingDings" Content="&#xF0DF;" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" Width="55" Click="LeftButton_Click"></Button>
+        <Button FontFamily="WingDings" Content="&#xF0E0;" HorizontalAlignment="Left" Margin="120,113,0,0" VerticalAlignment="Top" Width="55" Click="RightButton_Click" ></Button>
         
-    </Grid>
+        </Grid>
 </Window>

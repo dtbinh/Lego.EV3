@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 - Lego.EV3.HelloWorld", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{DF763000-8A53-40E5-8C6E-1A56C24EB16A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.EV3.HelloMotors", "Lego.EV3.HelloMotors\Lego.EV3.HelloMotors.csproj", "{032C5DAD-D659-43AB-930E-09D66B9CF63B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 - Lego.EV3.HelloMotors", "Lego.EV3.HelloMotors\02 - Lego.EV3.HelloMotors.csproj", "{032C5DAD-D659-43AB-930E-09D66B9CF63B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -23,6 +23,10 @@ namespace Lego.EV3.HelloMotors
     public partial class MainWindow : Window
     {
         Brick _brick;
+        int _forward = 40;
+        int _backward = -30;
+        uint _time = 300;
+
         
         public MainWindow()
         {
@@ -41,6 +45,32 @@ namespace Lego.EV3.HelloMotors
         {
             Debug.WriteLine("algo ocurrió");
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            _brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.B | OutputPort.C, _forward, _time, false);
+        }
+
+
+        private void RightButton_Click(object sender, RoutedEventArgs e)
+        {
+            _brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.B, _forward, _time, false);
+        }
+
+        private void LeftButton_Click(object sender, RoutedEventArgs e)
+        {
+            _brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.C, _forward, _time, false);
+        }
+
+        private void BackwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            _brick.DirectCommand.TurnMotorAtPowerForTimeAsync(OutputPort.B | OutputPort.C, _backward, _time, false);
         }
     }
 }
