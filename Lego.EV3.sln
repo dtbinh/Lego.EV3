@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.EV3.Net.Web", "Lego.EV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 - Lego.EV3.ConsoleVote", "Lego.EV3.ConsoleVote\04 - Lego.EV3.ConsoleVote.csproj", "{CEFA16D8-28D7-4BC6-85D8-21FD25D46D93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.EV3.HelloWorld", "Lego.EV3.HelloWorld\Lego.EV3.HelloWorld.csproj", "{246505F6-BCF0-436E-813A-E797D307611F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 - Lego.EV3.HelloWorld", "Lego.EV3.HelloWorld\01 - Lego.EV3.HelloWorld.csproj", "{246505F6-BCF0-436E-813A-E797D307611F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{DF763000-8A53-40E5-8C6E-1A56C24EB16A}"
 EndProject
