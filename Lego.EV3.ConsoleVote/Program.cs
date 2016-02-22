@@ -31,7 +31,15 @@ namespace Lego.EV3.ConsoleVote
             _brick.BrickChanged += _brick_BrickChanged;
 
             Console.WriteLine("Connecting...");
-            await _brick.ConnectAsync();
+            try {
+                await _brick.ConnectAsync();
+            }
+            catch
+            {
+                System.Console.WriteLine("Error...!!");
+            }   
+         
+            
             await _brick.DirectCommand.PlayToneAsync(100, 40000, 300);
 
             System.Console.WriteLine("Connected...");

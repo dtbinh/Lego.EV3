@@ -25,7 +25,7 @@ textarea {
     }
 
     #forward {
-        margin-left: 60px;
+        /*margin-left: 60px;*/
         width: 60px;
         height: 60px;        
     }
@@ -45,19 +45,26 @@ textarea {
 
     #back {
         top: 80px;
-        margin-left: 60px;
+        /*margin-left: 60px;*/
         width: 60px;
         height: 60px;
     }
 
+.votesTable {
+    margin-top:40px;
+    border:none;
+}
 .votesTable > thead > tr > th {
     text-align:center;
+     border:none;
 }
 
 .votesTable > tbody > tr > td {
-    text-align: right;
+    text-align: center;
+    border:none;
 }
 
 .votesTable > tbody > tr > td.currentWinner {
     background-color: lightgreen;
+    border:none;
 }

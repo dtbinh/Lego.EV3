@@ -9,8 +9,8 @@
 
 
 
-<div class="container">
-    <div class="col-md-6">
+<div class="container text-center ">
+    <div class="col-md-6 ">
         <div class="row">
             <button id="forward" value="1" class="btn btn-success" >&#8657;</button>
         </div>
@@ -23,6 +23,7 @@
         </div>
     </div>
     <div class="col-md-6">
+
         <!-- Results will be displayed here -->
         <table class="table table-bordered votesTable">
             <thead>
@@ -45,13 +46,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="row" style="font-size: 40px;">
-            <div id="sensorDistance"></div>
-            <div id="first"></div>
-            <div id="second"></div>
-            <div id="third"></div>
-            <div id="fourth"></div>
-        </div>
+
 
     </div>
 </div>
@@ -59,41 +54,5 @@
 @section scripts {
     @*<script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>*@
     <script src="~/signalr/hubs"></script>
-    <script>
-        $(function () {
-            
-
-         
-
-            //client function to receive
-      //      voteHub.client.sendState = function (state)
-        //    {
-            //    var dist = state.SensorDistance;
-            //    console.log(state);
-
-            //    //use jQuery to pull values
-            //    $("#sensorDistance").text("Distance" + ": " + dist);
-            //    $("#first").text(lookup(state.AllVotes[0].Command) + ": " + state.AllVotes[0].Count);
-            //    $("#second").text(lookup(state.AllVotes[1].Command) + ": " + state.AllVotes[1].Count);
-            //    $("#third").text(lookup(state.AllVotes[2].Command) + ": " + state.AllVotes[2].Count);
-            //    $("#fourth").text(lookup(state.AllVotes[3].Command) + ": " + state.AllVotes[3].Count);
-
-            //    console.log(state);
-        //    };
-
-            ////lookup to display a friendly label versus the enum value
-            //function lookup(id) {
-            //    if (id == 0)
-            //        return "Forward";
-            //    if (id == 1)
-            //        return "Back";
-            //    if (id == 2)
-            //        return "Left";
-            //    if (id == 3)
-            //        return "Right";
-            //}
-
-         
-        });
-    </script>
+  
 }
