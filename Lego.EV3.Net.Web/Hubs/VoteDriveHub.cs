@@ -6,33 +6,30 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Lego.EV3.Net.Web.Hubs
 {
     public class VoteDriveHub: Hub
     {
+        private VoteCounter instance;
 
-        public static Dictionary<DriveCommand, int> CurrentVotesCount = new Dictionary<DriveCommand, int>()
+        public VoteDriveHub() : this(VoteCounter.Instance) { }
+
+        public VoteDriveHub(VoteCounter instance)
         {
-            {DriveCommand.Left, 0 },
-            {DriveCommand.Forward, 0 },
-            {DriveCommand.Right, 0 },
-            {DriveCommand.Back, 0 },
-        };
+            this.instance = instance;
+        }
 
         public void SendDriveCommand(DriveCommand command)
         {
-            if(CurrentVotesCount[command] < Int32.MaxValue)
-            {
-                CurrentVotesCount[command]++;
-            }
-            Clients.All.updateVotesCounter(CurrentVotesCount);
+            instance.UpdateVoteCounter(command);
             Trace.TraceInformation("SendDriveCommand: " + command.ToString());
         }
 
         public override Task OnConnected()
         {
-            Clients.All.updateVotesCounter(CurrentVotesCount);
+            Clients.All.updateVotesCounter(instance.CurrentVotesCount);
             return base.OnConnected();
         }
 
